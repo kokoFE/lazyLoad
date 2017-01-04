@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #abc {
+      /*width: 300px;*/
+      /*background: pink;*/
+      /*position: relative;*/
+      /*top: 200px;*/
+    }
+    #bcd {
+ /*     position: relative;
+      top: 1500px;*/
+    }
+  </style>
+</head>
+<body>
+  <div id="abc" style="color:#ddd;">
+    <img src="" alt="" data-src="https://sf-sponsor.b0.upaiyun.com/d6a44d243cc90704ae3834288cf25027.png" style="width:300px;height:200px;opacity:0;">
+    <h2>dnf</h2>
+    <p>本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...</p>
+    <p>本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...</p>
+    <p>本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...</p>
+    <p>本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...</p>
+    <img src="" alt="" data-src="https://sf-sponsor.b0.upaiyun.com/d6a44d243cc90704ae3834288cf25027.png" style="width:100px;">
+  </div>
+  <h3>1123</h3>
+  <div id="bcd">2
+
+  </div>
+  <p style="">本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...</p>
+  <img id="no1" src="" alt="" data-src="https://sf-sponsor.b0.upaiyun.com/d6a44d243cc90704ae3834288cf25027.png" style="position:relative;width:100px;height:64px;top:2000px;">
+  <script src="http://cdn.bootcss.com/jquery/2.2.2/jquery.js"></script>
+  <script>
+  $('img').each(function(index, el) {
+    console.log(el.offsetTop)
+  });
+    function getStyle(obj,attr){ return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];}
+
+    // function LazyLoad(){
+    //   this.src 
+    // }
+    var wHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var wWidth = window.innerWidth || document.documentElement.clinetWidth || document.body.clinetWidth;
+
+    var t = document.getElementById('abc');
+    window.onclick = function(){
+      // console.log(t.currentStyle['width'])
+
+      console.log(t.offsetTop)
+      console.log(document.body.scrollTop)
+      // console.log('this\'s'+t)
+      // alert(window.innerWidth )
+      // alert(h)
+    }
+
+    function foo(target){
+      var tt = 0;
+      // for (var i = 0; i < document.getElementsByTagName('img').length; i++) {
+        // var target = document.getElementsByTagName('img')[i];
+        // console.log(document.getElementsByTagName('img')[i].src)
+        target.src = target.dataset.src;
+        target.style.opacity = 1;
+        // console.log('scroll'+tt);
+        tt++;
+      // }
+    }
+
+    window.onload =function(){
+        var index = 0;
+      for (var i = 0; i < document.getElementsByTagName('img').length; i++) {
+        var target = document.getElementsByTagName('img')[i];
+        console.log(i,document.getElementsByTagName('img')[i].offsetTop)
+        console.log(document.getElementById('no1').offsetTop,wHeight)
+        if (target.offsetTop - document.body.scrollTop < wHeight) {
+          foo(target) 
+        }
+      }
+    }
+    window.onscroll = function(){
+      for (var i = 0; i < document.getElementsByTagName('img').length; i++) {  
+        var target = document.getElementsByTagName('img')[i];
+        console.log(target.offsetTop,document.body.scrollTop,wHeight)
+        console.log($('body').scrollTop())
+        // console.log(getStyle(target, 'height'))
+        if (target.offsetTop - document.body.scrollBottom <= wHeight) {foo(target)}
+        
+      }
+    }
+  </script>
+</body>
+</html>
