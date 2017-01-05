@@ -55,19 +55,15 @@
     var wWidth = window.innerWidth || document.documentElement.clinetWidth || document.body.clinetWidth;
 
     var t = document.getElementById('abc');
-    window.onclick = function(){
-      // console.log(t.currentStyle['width'])
-
-      console.log(t.offsetTop)
-      console.log(document.body.scrollTop)
-      // console.log('this\'s'+t)
-      // alert(window.innerWidth )
-      // alert(h)
-    }
-
+    
     function foo(target){
         target.src = target.dataset.src;
         target.style.opacity = 1;
+    }
+
+    var img = new image();
+    img.onload() = function(){
+      console.log(this)
     }
 
     window.onload =function(){
@@ -79,7 +75,6 @@
           console.log(getElementTop(target),target.offsetParent,document.body.scrollTop,$('img:eq(2)').offset().top)
           // console.log()
           foo(target)}
-        
       }
     }
     window.onscroll = function(){
