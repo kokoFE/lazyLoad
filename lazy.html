@@ -22,25 +22,30 @@
 </head>
 <body>
   <div id="abc" style="color:#ddd;">
-    <img src="" alt="" data-src="https://sf-sponsor.b0.upaiyun.com/d6a44d243cc90704ae3834288cf25027.png" style="width:300px;height:200px;opacity:0;">
+    <h1>123</h1>
+    <img src="" alt="" id="no1" data-src="https://sf-sponsor.b0.upaiyun.com/d6a44d243cc90704ae3834288cf25027.png" style="width:300px;height:200px;opacity:0;">
     <h2>dnf</h2>
     <p>本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...</p>
     <p>本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...</p>
     <p>本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...</p>
     <p>本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...</p>
-    <img src="" alt="" data-src="https://sf-sponsor.b0.upaiyun.com/d6a44d243cc90704ae3834288cf25027.png" style="width:100px;">
+    <img src="" alt="" id="no2" data-src="https://sf-sponsor.b0.upaiyun.com/d6a44d243cc90704ae3834288cf25027.png" style="width:100px;">
   </div>
   <h3>1123</h3>
-  <div id="bcd">2
-
+  <div id="bcd">2  </div>
+  <p style="height:1000px;">本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...</p>
+  <div style="position:relative;">
+    <img id="no3" src="" alt="" data-src="https://sf-sponsor.b0.upaiyun.com/d6a44d243cc90704ae3834288cf25027.png" style="position:relative;width:100px;height:64px;">
   </div>
-  <p style="">本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...本书覆盖 ES6 与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本书为中级难度，适合已经掌握 ES5 的读者，用来 ...</p>
-  <img id="no1" src="" alt="" data-src="https://sf-sponsor.b0.upaiyun.com/d6a44d243cc90704ae3834288cf25027.png" style="position:relative;width:100px;height:64px;top:2000px;">
+  <p style="height:200px;"></p>
+  <img id="no4" src="" alt="" data-src="https://sf-sponsor.b0.upaiyun.com/d6a44d243cc90704ae3834288cf25027.png" style="position:relative;width:100px;height:64px;">
+
   <script src="http://cdn.bootcss.com/jquery/2.2.2/jquery.js"></script>
   <script>
-  $('img').each(function(index, el) {
-    console.log(el.offsetTop)
-  });
+  var jqTop = $('img:eq(2)').offset().top;
+  var ttt = $(document).scrollTop()
+  var jsTop = document.getElementsByTagName('img')[2].offsetTop;
+  console.log(window.innerWidth,document.documentElement.clinetWidth,document.body.clinetWidth)
     function getStyle(obj,attr){ return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];}
 
     // function LazyLoad(){
@@ -61,38 +66,50 @@
     }
 
     function foo(target){
-      var tt = 0;
-      // for (var i = 0; i < document.getElementsByTagName('img').length; i++) {
-        // var target = document.getElementsByTagName('img')[i];
-        // console.log(document.getElementsByTagName('img')[i].src)
         target.src = target.dataset.src;
         target.style.opacity = 1;
-        // console.log('scroll'+tt);
-        tt++;
-      // }
     }
 
     window.onload =function(){
-        var index = 0;
-      for (var i = 0; i < document.getElementsByTagName('img').length; i++) {
+      for (var i = 0; i < document.getElementsByTagName('img').length; i++) {  
         var target = document.getElementsByTagName('img')[i];
-        console.log(i,document.getElementsByTagName('img')[i].offsetTop)
-        console.log(document.getElementById('no1').offsetTop,wHeight)
-        if (target.offsetTop - document.body.scrollTop < wHeight) {
-          foo(target) 
-        }
+        // console.log('scroll offsetTop '+target.offsetTop,'scrolltop '+document.body.scrollTop,target.clientHeight,wHeight,ttt)
+        // console.log(getStyle(target, 'height'))
+        if (getElementTop(target) - document.body.scrollTop >= 0 && getElementTop(target) - document.body.scrollTop <= wHeight) {
+          console.log(getElementTop(target),target.offsetParent,document.body.scrollTop,$('img:eq(2)').offset().top)
+          // console.log()
+          foo(target)}
+        
       }
     }
     window.onscroll = function(){
       for (var i = 0; i < document.getElementsByTagName('img').length; i++) {  
         var target = document.getElementsByTagName('img')[i];
-        console.log(target.offsetTop,document.body.scrollTop,wHeight)
-        console.log($('body').scrollTop())
+        // console.log('scroll offsetTop '+target.offsetTop,'scrolltop '+document.body.scrollTop,target.clientHeight,wHeight,ttt)
         // console.log(getStyle(target, 'height'))
-        if (target.offsetTop - document.body.scrollBottom <= wHeight) {foo(target)}
+        if (getElementTop(target) - document.body.scrollTop >= 0 && getElementTop(target) - document.body.scrollTop <= wHeight) {
+          console.log(getElementTop(target),target.offsetParent,document.body.scrollTop,$('img:eq(2)').offset().top)
+          // console.log()
+          foo(target)}
         
       }
     }
+
+function getElementTop(element){
+  var actualTop = element.offsetTop;
+  var current = element.offsetParent;
+
+  while (current !== null){
+    actualTop += current.offsetTop;
+    current = current.offsetParent;
+  }
+
+  return actualTop;
+}
+
+
+console.log(getElementTop(document.getElementById('no1')))
+// console.log(getElementTop(document.getElementsByTagName('img')[2]))
   </script>
 </body>
 </html>
